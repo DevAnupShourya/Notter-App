@@ -1,5 +1,5 @@
-# Project Title
-A brief description of what this project does and who it's for
+# To Do
+made by using HTML SCSS & TS. 
 
 ## How To Start
 ### To Initialize TypeScript

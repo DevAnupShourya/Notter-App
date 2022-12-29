@@ -1,1 +1,14 @@
+// For Icons
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+// For FOnts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;800&display=swap');
+
+
+// Importing other modules 
+@import './colors';
+@import './screen';
+
+// Custom Style Starts 
+*{
+    font-family: 'Poppins', sans-serif;
+}
