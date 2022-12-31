@@ -7,8 +7,266 @@
 // Importing other modules 
 @import './colors';
 @import './screen';
+@import './mixins';
 
 // Custom Style Starts 
-*{
+* {
     font-family: 'Poppins', sans-serif;
+}
+
+section {
+    background-color: $bg_normal;
+    color: $text_normal;
+
+    $left_indent : 15%;
+
+    #logo {
+        background-color: $bg_normal;
+        color: $text_normal;
+        width: $left_indent;
+        height: $left_indent;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        @include gc;
+
+        h1 {
+            font-weight: 100;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+    }
+
+    #searchbar {
+        background-color: $bg_normal;
+        color: $text_normal;
+        width: calc(100% - $left_indent); // 100% - 15%
+        height: $left_indent;
+        position: absolute;
+        top: 0px;
+        left: $left_indent;
+        @include fc;
+        justify-content: flex-start;
+        padding: 0px 20px;
+
+        i {
+            width: 5%;
+            height: 50%;
+            background-color: $bg_search;
+            font-size: 20px;
+            @include gc;
+            color: $text_normal;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        input {
+            background-color: $bg_search;
+            font-size: 20px;
+            @include nd;
+            height: 50%;
+            width: 80%;
+            color: $text_normal;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+    }
+
+    #noteAdderDiv {
+        background-color: $bg_normal;
+        color: $text_normal;
+        width: $left_indent;
+        height: calc(100% - $left_indent); // 100% - 15%
+        position: absolute;
+        top: $left_indent;
+        left: 0px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        #noteBoxAniBtn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            @include nd;
+            margin-bottom: 20%;
+            cursor: pointer;
+
+        }
+
+        #noteAdderBtns {
+            overflow: hidden;
+            width: 100%;
+            height: 0%;
+            transition: all .5s 0ms ease-in-out;
+        }
+
+        .active {
+            width: 100% !important;
+            height: 50% !important;
+        }
+
+
+        #noteAdderBtns>li>button {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 10px;
+            @include nd;
+            cursor: pointer;
+        }
+
+        #purpleDivOpener {
+            background-color: $card_bg_1 ;
+        }
+
+        #greenDivOpener {
+            background-color: $card_bg_2 ;
+        }
+
+        #whiteDivOpener {
+            background-color: $card_bg_3 ;
+        }
+
+        #yelloDivOpener {
+            background-color: $card_bg_4 ;
+        }
+    }
+
+    #noteDisplay {
+        background-color: $bg_normal;
+        color: $text_normal;
+        width: calc(100% - $left_indent); // 100% - 15%
+        height: calc(100% - $left_indent);
+        position: absolute;
+        top: $left_indent;
+        left: $left_indent;
+        overflow: scroll;
+        padding: 0px 20px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .noteList {
+            @include fc;
+            justify-content: start;
+            flex-wrap: wrap;
+
+            .card {
+                width: 300px;
+                height: 350px;
+                margin-top: 20px;
+                margin-right: 20px;
+                border-radius: 10px;
+            }
+
+            .purpleCard {
+                background-color: $card_bg_1;
+            }
+
+            .greenCard {
+                background-color: $card_bg_2;
+            }
+
+            .whiteCard {
+                background-color: $card_bg_3;
+            }
+
+            .yelloCard {
+                background-color: $card_bg_4;
+            }
+
+            // here
+            .content {
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                @include fc;
+                flex-direction: column;
+                justify-content: space-between;
+                color: $bg_search;
+
+                .textContent {
+                    width: 100%;
+                    height: 85%;
+                    overflow: scroll;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+
+                .editContent {
+                    width: 100%;
+                    height: 15%;
+                    @include fc;
+                    justify-content: space-between;
+                    align-items: baseline;
+
+                    .date {
+                        width: 80%;
+                        height: 100%;
+                    }
+
+                    .editBtn {
+                        width: 40px;
+                        height: 40px;
+                        @include gc;
+                        border-radius: 50%;
+                        background-color: $text_normal;
+                        cursor: pointer;
+                    }
+                }
+
+
+            }
+
+            .editBox {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                top: -100%;
+                left: 0;
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(2px);
+                border-radius: 10px;
+                @include gc;
+                display: none;
+                
+                .moveBack{
+                    position: relative;
+                    top: -50px;
+                    left: -120px;
+                    color: black;
+                    cursor: pointer;
+                }
+                .icons {
+                    position: relative;
+                    top: -100px;
+                    left: 0px;
+                    width: 150px;
+                    height: 50px;
+                    @include fc;
+                    justify-content: space-between;
+
+                    i {
+                        width: 40px;
+                        height: 40px;
+                        background-color: black;
+                        color: whitesmoke;
+                        border-radius: 50%;
+                        @include gc;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+
+        }
+    }
 }

@@ -4,4 +4,246 @@
   font-family: "Poppins", sans-serif;
 }
 
+section {
+  background-color: black;
+  color: white;
+}
+section #logo {
+  background-color: black;
+  color: white;
+  width: 15%;
+  height: 15%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: grid;
+  place-items: center;
+}
+section #logo h1 {
+  font-weight: 100;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+section #searchbar {
+  background-color: black;
+  color: white;
+  width: 85%;
+  height: 15%;
+  position: absolute;
+  top: 0px;
+  left: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 20px;
+}
+section #searchbar i {
+  width: 5%;
+  height: 50%;
+  background-color: #212121;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+section #searchbar input {
+  background-color: #212121;
+  font-size: 20px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  height: 50%;
+  width: 80%;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+section #noteAdderDiv {
+  background-color: black;
+  color: white;
+  width: 15%;
+  height: 85%;
+  position: absolute;
+  top: 15%;
+  left: 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+section #noteAdderDiv #noteBoxAniBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  margin-bottom: 20%;
+  cursor: pointer;
+}
+section #noteAdderDiv #noteAdderBtns {
+  overflow: hidden;
+  width: 100%;
+  height: 0%;
+  transition: all 0.5s 0ms ease-in-out;
+}
+section #noteAdderDiv .active {
+  width: 100% !important;
+  height: 50% !important;
+}
+section #noteAdderDiv #noteAdderBtns > li > button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 10px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+section #noteAdderDiv #purpleDivOpener {
+  background-color: #e9abcf;
+}
+section #noteAdderDiv #greenDivOpener {
+  background-color: #c8e054;
+}
+section #noteAdderDiv #whiteDivOpener {
+  background-color: #f5f0ed;
+}
+section #noteAdderDiv #yelloDivOpener {
+  background-color: #f5b401;
+}
+section #noteDisplay {
+  background-color: black;
+  color: white;
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  overflow: scroll;
+  padding: 0px 20px;
+}
+section #noteDisplay::-webkit-scrollbar {
+  display: none;
+}
+section #noteDisplay .noteList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+section #noteDisplay .noteList .card {
+  width: 300px;
+  height: 350px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+section #noteDisplay .noteList .purpleCard {
+  background-color: #e9abcf;
+}
+section #noteDisplay .noteList .greenCard {
+  background-color: #c8e054;
+}
+section #noteDisplay .noteList .whiteCard {
+  background-color: #f5f0ed;
+}
+section #noteDisplay .noteList .yelloCard {
+  background-color: #f5b401;
+}
+section #noteDisplay .noteList .content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #212121;
+}
+section #noteDisplay .noteList .content .textContent {
+  width: 100%;
+  height: 85%;
+  overflow: scroll;
+}
+section #noteDisplay .noteList .content .textContent::-webkit-scrollbar {
+  display: none;
+}
+section #noteDisplay .noteList .content .editContent {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  align-items: baseline;
+}
+section #noteDisplay .noteList .content .editContent .date {
+  width: 80%;
+  height: 100%;
+}
+section #noteDisplay .noteList .content .editContent .editBtn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+}
+section #noteDisplay .noteList .editBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  display: none;
+}
+section #noteDisplay .noteList .editBox .moveBack {
+  position: relative;
+  top: -50px;
+  left: -120px;
+  color: black;
+  cursor: pointer;
+}
+section #noteDisplay .noteList .editBox .icons {
+  position: relative;
+  top: -100px;
+  left: 0px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+section #noteDisplay .noteList .editBox .icons i {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  color: whitesmoke;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=style.css.map */

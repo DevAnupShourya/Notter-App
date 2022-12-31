@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,58 @@
     <link rel="stylesheet" href="./css/reset.css">
     <title> Listter </title>
 </head>
+
 <body>
-        
+    <section>
+        <div id="logo">
+            <h1>Notter</h1>
+        </div>
+        <div id="searchbar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search">
+        </div>
+        <div id="noteAdderDiv">
+            <button id="noteBoxAniBtn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <ul id="noteAdderBtns" class="">
+                <li><button id="purpleDivOpener" name="purpleCard" title="Spritual Note"></button></li>
+                <li><button id="greenDivOpener" name="greenCard" title="Note"></button></li>
+                <li><button id="whiteDivOpener" name="whiteCard" title="Professional Note"></button></li>
+                <li><button id="yelloDivOpener" name="yelloCard" title="Famliy Note"></button></li>
+            </ul>
+        </div>
+        <div id="noteDisplay">
+            <h1>Notes</h1>
+            <div class="noteList">
+                <div id="1" class="card purpleCard">
+                    <div class="content">
+                        <div class="textContent">
+                            <p contenteditable>This is the very first card</p>
+                        </div>
+                        <div class="editContent">
+                            <h4 class="date">Jan 25, 2022</h4>
+                            <h3 id="first" class="editBtn"> <i class="fa-solid fa-sliders"></i> </h3>
+                            <!-- <h3 class="editBtn"> <i class="fa-solid fa-gear"></i> </h3> -->
+                        </div>
+                    </div>
+                    <div class="editBox">
+                        <h1 class="moveBack">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                        </h1>
+                        <div class="icons">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i class="fa-regular fa-trash-can"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="./js/script.js"></script>
 </body>
+
 </html>
+
+<!-- <i class="fa-regular fa-pen-to-square"></i> -->
+<!-- <i class="fa-regular fa-trash-can"></i> -->
