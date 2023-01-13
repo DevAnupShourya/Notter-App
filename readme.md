@@ -10,8 +10,8 @@ made by using HTML SCSS & TS.
 
 ### To Initialize SCSS
 ```bash
-  sass --watch src/scss/:dist/css/
-```
+  
+```sass --watch src/scss/:dist/css/
 ### Now Start Coding!!
 
 ### To Use Icons 
