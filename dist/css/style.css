@@ -56,6 +56,7 @@ section #searchbar input {
   text-decoration: none;
   outline: none;
   border: none;
+  list-style-type: none;
   height: 50%;
   width: 80%;
   color: white;
@@ -89,13 +90,14 @@ section #noteAdderDiv #noteBoxAniBtn {
   height: 40px;
   border-radius: 50%;
   text-align: center;
-  text-decoration: none;
-  outline: none;
-  border: none;
   margin-bottom: 20%;
   cursor: pointer;
 }
 section #noteAdderDiv #noteAdderBtns {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  list-style-type: none;
   overflow: hidden;
   width: 100%;
   height: 0%;
@@ -113,6 +115,7 @@ section #noteAdderDiv #noteAdderBtns > li > button {
   text-decoration: none;
   outline: none;
   border: none;
+  list-style-type: none;
   cursor: pointer;
 }
 section #noteAdderDiv #purpleDivOpener {
