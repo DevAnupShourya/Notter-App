@@ -13,11 +13,14 @@
 <body>
     <section>
         <div id="logo">
-            <h1>Notter</h1>
+            <h1>Listter</h1>
         </div>
         <div id="searchbar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search">
+            <input type="text" placeholder="Search" onkeyup="search(this)">
+            <h3 class="sizeshower"> 
+                <span id="size">45KB </span> / 5MB
+            </h3>
         </div>
         <div id="noteAdderDiv">
             <button id="noteBoxAniBtn">
@@ -33,34 +36,10 @@
         <div id="noteDisplay">
             <h1>Notes</h1>
             <div class="noteList">
-                <div id="1" class="card purpleCard">
-                    <div class="content">
-                        <div class="textContent">
-                            <p contenteditable>This is the very first card</p>
-                        </div>
-                        <div class="editContent">
-                            <h4 class="date">Jan 25, 2022</h4>
-                            <h3 id="first" class="editBtn"> <i class="fa-solid fa-sliders"></i> </h3>
-                            <!-- <h3 class="editBtn"> <i class="fa-solid fa-gear"></i> </h3> -->
-                        </div>
-                    </div>
-                    <div class="editBox">
-                        <h1 class="moveBack">
-                            <i class="fa-solid fa-circle-arrow-left"></i>
-                        </h1>
-                        <div class="icons">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-regular fa-trash-can"></i>
-                        </div>
-                    </div>
-                </div>
+
             </div>
-        </div>
-    </section>
+    </section>  
     <script src="./js/script.js"></script>
 </body>
 
 </html>
-
-<!-- <i class="fa-regular fa-pen-to-square"></i> -->
-<!-- <i class="fa-regular fa-trash-can"></i> -->
