@@ -46,7 +46,7 @@ section {
         @include fc;
         justify-content: flex-start;
         padding: 0px 20px;
-
+        
         i {
             width: 5%;
             height: 50%;
@@ -68,7 +68,13 @@ section {
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
         }
-
+        
+        .sizeshower{
+            width: 15%;
+            height: 50%;
+            @include fc;
+        }
+        
     }
 
     #noteAdderDiv {
