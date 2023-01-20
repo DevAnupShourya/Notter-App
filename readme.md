@@ -1,37 +1,20 @@
-# To Do
-made by using HTML SCSS & TS. 
+# [Notter - The Notes Taking App](this.com)
+# Video Here
+Made by HTML , SCSS and TS. 
 
-## How To Start
-### To Initialize TypeScript
+#### For SCSS Compilation 
 ```bash
-  tsc --init
+  sass --watch src/scss/:dist/css/
 ```
-### Not Change "rootDir" and "outDir" variable values.
 
-### To Initialize SCSS
-```bash
-  
-```sass --watch src/scss/:dist/css/
-### Now Start Coding!!
-
-### To Use Icons 
--[FontAwesome]()
-
-### Now Initialize Git
-```
-  ....
-```
 ## Contact Me
  - [E-Mail](mailto:contact.yourwebdev@gmail.com)
  - [Github](https://github.com/AnupShouryaDev)
  - [LinkedIn](https://www.linkedin.com/in/anup-shourya-141b3b1b5/)
 
-## future
- - show this message in nodeDisplay div when nothing in there "No Notes to display Now" or any animation
-make more stable
-Readme update
-push on github
-share on linkedIn
-
-future 
-- add responsiveness
+## Future RoadMap
+- Add a feature : when there is no notes to display then show it to user like 'No Notes to display' or any Animation.
+- Add Responsiveness.
+- Show Current Date and Time both in Time showing div.
+- Add Some Animation on clicking the + icon.
+- Make the code more readable.

@@ -95,15 +95,15 @@ const displayNotes = () => {
     })
 }
 // * index number to replace
-let card_i : number;
+let card_i: number;
 const editDivOpen = (t: HTMLElement) => {
     // ? hiding the editBox
-    const ebox : HTMLElement = t.parentElement?.parentElement!;
+    const ebox: HTMLElement = t.parentElement?.parentElement!;
     ebox.style.display = 'none';
     // ? getting info about card
     let card_html: HTMLElement = t.parentElement?.parentElement?.parentElement!;
     let card_text: string = t.parentElement?.parentElement?.parentElement?.children[0].children[0].children[0].textContent!;
-    card_i  = get_i_by_text(card_text , notes);
+    card_i = get_i_by_text(card_text, notes);
 
     card_html.innerHTML = `
     <div class="content">
@@ -124,7 +124,7 @@ const replaceNote = (e: any) => {
     let note: string = e.parentNode.parentNode.querySelector('p').innerText; // Text entered by the user
     let noteTime: string = timeNow.toLocaleTimeString(); // current time
     let cardType: string = e.parentElement?.parentElement?.parentElement?.classList[1]; // card type
-    
+
     // ? saving the index number which has to replace
     const ith_to_replace: number = card_i;
     // ? replacing the values
@@ -137,12 +137,12 @@ const replaceNote = (e: any) => {
     displayNotes();
 }
 
-// ! delete the note
+// ? deleting the note
 const deleteNote = (t: HTMLElement) => {
     // ? find the note to delete
     const noteToDelete: string = t.parentElement?.parentElement?.parentElement?.children[0].children[0].children[0].textContent!;
     // ? finding the index number which to delete
-    const ith_to_delete: number = get_i_by_text(noteToDelete , notes);
+    const ith_to_delete: number = get_i_by_text(noteToDelete, notes);
     // ? delete that element from the given index number
     notes.splice(ith_to_delete, 1);
     notesTime.splice(ith_to_delete, 1);
@@ -159,7 +159,6 @@ const get_i_by_text = (t: string, arr: string[]) => {
     })
     return ith;
 }
-displayNotes();
 
 // ? Card Btn Open Animation 
 const noteAdderBtns: HTMLElement = document.getElementById('noteAdderBtns')!;
@@ -170,7 +169,7 @@ noteBoxAniBtn.addEventListener('click', () => {
 
 // ? showing the settings div aniamation
 const showEditBox = (t: Element) => {
-    const eb = t.parentElement?.parentElement?.parentElement?.children[1]  as HTMLElement;
+    const eb = t.parentElement?.parentElement?.parentElement?.children[1] as HTMLElement;
     eb.style.display = 'grid';
 }
 // ? hiding the settings div aniamation
@@ -180,29 +179,26 @@ const hideEditBox = (t: Element) => {
 }
 
 // ? searching for notes
-const search = (t : HTMLInputElement) => {
-    let searchQuery : string = t.value;
-    let notes_text : HTMLCollectionOf<HTMLParagraphElement> = document.getElementsByTagName('p');
-    
-    for(const n of notes_text){
+const search = (t: HTMLInputElement) => {
+    let searchQuery: string = t.value;
+    let notes_text: HTMLCollectionOf<HTMLParagraphElement> = document.getElementsByTagName('p');
+
+    for (const n of notes_text) {
         let note_text = n.innerText.toLowerCase();
-        let curr_Card : HTMLElement = n.parentElement?.parentElement?.parentElement!;
+        let curr_Card: HTMLElement = n.parentElement?.parentElement?.parentElement!;
         console.log(curr_Card);
-        
-        if(note_text.includes(searchQuery)){
+
+        if (note_text.includes(searchQuery)) {
             curr_Card.style.display = 'flex';
         }
-        else{
+        else {
             curr_Card.style.display = 'none';
         }
     }
 }
 
-
 // ? Showing used size in DOM
-
-const sizeShower : HTMLElement = document.getElementById('size')!;
-
+const sizeShower: HTMLElement = document.getElementById('size')!;
 // Copied from stack overflow
 let _lsTotal = 0, _xLen, _x;
 for (_x in localStorage) {
@@ -214,6 +210,7 @@ for (_x in localStorage) {
     // for each item of localstorage
     // console.log(_x.substr(0, 50) + " = " + (_xLen / 1024).toFixed(2) + " KB")
 };
-let used : string = `${(_lsTotal / 1024).toFixed(2)}KB`;
+let used: string = `${(_lsTotal / 1024).toFixed(2)}KB`;
 sizeShower.innerText = used;
-
+// * Loading all notes in DOM
+displayNotes();

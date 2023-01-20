@@ -16,6 +16,7 @@ section {
     background-color: $bg_normal;
     color: $text_normal;
 
+    // Change It as device changes
     $left_indent : 15%;
 
     #logo {
@@ -38,7 +39,7 @@ section {
     #searchbar {
         background-color: $bg_normal;
         color: $text_normal;
-        width: calc(100% - $left_indent); // 100% - 15%
+        width: calc(100% - $left_indent);
         height: $left_indent;
         position: absolute;
         top: 0px;
@@ -81,7 +82,7 @@ section {
         background-color: $bg_normal;
         color: $text_normal;
         width: $left_indent;
-        height: calc(100% - $left_indent); // 100% - 15%
+        height: calc(100% - $left_indent);
         position: absolute;
         top: $left_indent;
         left: 0px;
@@ -144,7 +145,7 @@ section {
     #noteDisplay {
         background-color: $bg_normal;
         color: $text_normal;
-        width: calc(100% - $left_indent); // 100% - 15%
+        width: calc(100% - $left_indent);
         height: calc(100% - $left_indent);
         position: absolute;
         top: $left_indent;
@@ -187,7 +188,6 @@ section {
                 background-color: $card_bg_4;
             }
 
-            // here
             .content {
                 width: 100%;
                 height: 100%;
@@ -207,6 +207,7 @@ section {
                             overflow: -moz-scrollbars-none !important;
                             -ms-overflow-style: none !important;
                         }
+
                         outline: none;
                     }
                 }

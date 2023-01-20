@@ -42,9 +42,4 @@ h6 {
   overflow-wrap: break-word;
 }
 
-#root,
-#__next {
-  isolation: isolate;
-}
-
 /*# sourceMappingURL=reset.css.map */

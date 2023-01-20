@@ -37,12 +37,11 @@ let notes = JSON.parse(localStorage.getItem('notes') || '[]'); // All Text/Notes
 let notesTime = JSON.parse(localStorage.getItem('notesTime') || '[]'); // Last Editing Time
 let notesCardType = JSON.parse(localStorage.getItem('notesCardType') || '[]'); // Notes Type
 const addNote = (elem) => {
-    var _a, _b, _c, _d, _e;
     const timeNow = new Date();
     // ? getting all data which to keep save
-    let note = (_b = (_a = elem === null || elem === void 0 ? void 0 : elem.parentNode) === null || _a === void 0 ? void 0 : _a.parentNode) === null || _b === void 0 ? void 0 : _b.querySelector('p'); // Text entered by the user
+    let note = elem?.parentNode?.parentNode?.querySelector('p'); // Text entered by the user
     let noteTime = timeNow.toLocaleTimeString(); // current time
-    let cardType = (_e = (_d = (_c = elem.parentElement) === null || _c === void 0 ? void 0 : _c.parentElement) === null || _d === void 0 ? void 0 : _d.parentElement) === null || _e === void 0 ? void 0 : _e.classList[1]; // card type
+    let cardType = elem.parentElement?.parentElement?.parentElement?.classList[1]; // card type
     // ? pushing all values in seprate arrays 
     notes.push(note.innerText);
     notesTime.push(noteTime);
@@ -91,13 +90,12 @@ const displayNotes = () => {
 // * index number to replace
 let card_i;
 const editDivOpen = (t) => {
-    var _a, _b, _c, _d, _e, _f;
     // ? hiding the editBox
-    const ebox = (_a = t.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
+    const ebox = t.parentElement?.parentElement;
     ebox.style.display = 'none';
     // ? getting info about card
-    let card_html = (_c = (_b = t.parentElement) === null || _b === void 0 ? void 0 : _b.parentElement) === null || _c === void 0 ? void 0 : _c.parentElement;
-    let card_text = (_f = (_e = (_d = t.parentElement) === null || _d === void 0 ? void 0 : _d.parentElement) === null || _e === void 0 ? void 0 : _e.parentElement) === null || _f === void 0 ? void 0 : _f.children[0].children[0].children[0].textContent;
+    let card_html = t.parentElement?.parentElement?.parentElement;
+    let card_text = t.parentElement?.parentElement?.parentElement?.children[0].children[0].children[0].textContent;
     card_i = get_i_by_text(card_text, notes);
     card_html.innerHTML = `
     <div class="content">
@@ -112,12 +110,11 @@ const editDivOpen = (t) => {
     </div>`;
 };
 const replaceNote = (e) => {
-    var _a, _b, _c;
     const timeNow = new Date();
     // ? getting all data which to keep save
     let note = e.parentNode.parentNode.querySelector('p').innerText; // Text entered by the user
     let noteTime = timeNow.toLocaleTimeString(); // current time
-    let cardType = (_c = (_b = (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.parentElement) === null || _c === void 0 ? void 0 : _c.classList[1]; // card type
+    let cardType = e.parentElement?.parentElement?.parentElement?.classList[1]; // card type
     // ? saving the index number which has to replace
     const ith_to_replace = card_i;
     // ? replacing the values
@@ -129,11 +126,10 @@ const replaceNote = (e) => {
     // ? displaying the new added notes in DOM
     displayNotes();
 };
-// ! delete the note
+// ? deleting the note
 const deleteNote = (t) => {
-    var _a, _b, _c, _d, _e;
     // ? find the note to delete
-    const noteToDelete = (_c = (_b = (_a = t.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.parentElement) === null || _c === void 0 ? void 0 : _c.children[0].children[0].children[0].textContent;
+    const noteToDelete = t.parentElement?.parentElement?.parentElement?.children[0].children[0].children[0].textContent;
     // ? finding the index number which to delete
     const ith_to_delete = get_i_by_text(noteToDelete, notes);
     // ? delete that element from the given index number
@@ -142,7 +138,7 @@ const deleteNote = (t) => {
     notesCardType.splice(ith_to_delete, 1);
     updateLocalStorage();
     // ? removing the card from dom
-    const card = (_e = (_d = t.parentElement) === null || _d === void 0 ? void 0 : _d.parentElement) === null || _e === void 0 ? void 0 : _e.parentElement;
+    const card = t.parentElement?.parentElement?.parentElement;
     card.style.display = 'none';
 };
 const get_i_by_text = (t, arr) => {
@@ -151,7 +147,6 @@ const get_i_by_text = (t, arr) => {
     });
     return ith;
 };
-displayNotes();
 // ? Card Btn Open Animation 
 const noteAdderBtns = document.getElementById('noteAdderBtns');
 const noteBoxAniBtn = document.getElementById('noteBoxAniBtn');
@@ -160,23 +155,21 @@ noteBoxAniBtn.addEventListener('click', () => {
 });
 // ? showing the settings div aniamation
 const showEditBox = (t) => {
-    var _a, _b, _c;
-    const eb = (_c = (_b = (_a = t.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.parentElement) === null || _c === void 0 ? void 0 : _c.children[1];
+    const eb = t.parentElement?.parentElement?.parentElement?.children[1];
     eb.style.display = 'grid';
 };
 // ? hiding the settings div aniamation
 const hideEditBox = (t) => {
-    const eb = t === null || t === void 0 ? void 0 : t.parentElement;
+    const eb = t?.parentElement;
     eb.style.display = 'none';
 };
 // ? searching for notes
 const search = (t) => {
-    var _a, _b;
     let searchQuery = t.value;
     let notes_text = document.getElementsByTagName('p');
     for (const n of notes_text) {
         let note_text = n.innerText.toLowerCase();
-        let curr_Card = (_b = (_a = n.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.parentElement;
+        let curr_Card = n.parentElement?.parentElement?.parentElement;
         console.log(curr_Card);
         if (note_text.includes(searchQuery)) {
             curr_Card.style.display = 'flex';
@@ -202,3 +195,5 @@ for (_x in localStorage) {
 ;
 let used = `${(_lsTotal / 1024).toFixed(2)}KB`;
 sizeShower.innerText = used;
+// * Loading all notes in DOM
+displayNotes();
