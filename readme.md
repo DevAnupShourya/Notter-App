@@ -1,5 +1,5 @@
-# [Notter - The Notes Taking App](this.com)
-![Video](./file.gif)
+# [Notter - The Notes Taking App]()
+![Video](file.gif)
 Made by HTML , SCSS and TS. 
 
 #### For SCSS Compilation 
