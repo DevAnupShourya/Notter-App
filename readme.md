@@ -1,5 +1,5 @@
 # [Notter - The Notes Taking App](this.com)
-# Video Here
+![Video](./file.gif)
 Made by HTML , SCSS and TS. 
 
 #### For SCSS Compilation 
