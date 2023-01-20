@@ -1,4 +1,4 @@
-# [Notter - The Notes Taking App]()
+# [Notter - The Notes Taking App](https://devanupshourya.github.io/Notter-App/)
 ![Video](./file.gif)
 Made by HTML , SCSS and TS. 
 
