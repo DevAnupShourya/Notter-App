@@ -1,0 +1,14 @@
+@import 'variables';
+
+@media screen and (min-width: $mediaUltraMaxWidth) {
+    // for Ultra Large Devices
+}
+@media screen and (min-width: $mediaMaxWidth) and (max-width: $mediaUltraMaxWidth) {
+    // for Desktops
+}
+@media screen and (min-width: $mediaMinWidth) and (max-width: $mediaMaxWidth) {
+    // for tablets
+}
+@media screen and (min-width: $mediaUltraMinWidth) and (max-width: $mediaMinWidth) {
+    // for Mobiles
+}

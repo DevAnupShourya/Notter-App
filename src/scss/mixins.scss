@@ -1,0 +1,25 @@
+// border
+@mixin b {
+    border: 1px solid red;
+}
+
+// grid center
+@mixin gc {
+    display: grid;
+    place-items: center;
+}
+
+// flex center
+@mixin fc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+// no decoration
+@mixin nd {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    list-style-type: none;
+}
