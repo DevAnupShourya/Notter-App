@@ -1,5 +1,6 @@
 # [Notter - The Notes Taking App](https://devanupshourya.github.io/Notter-App/)
-![Video](./file.gif)
+![Video](file.gif)
+
 Made by HTML , SCSS and TS. 
 
 #### For SCSS Compilation 
